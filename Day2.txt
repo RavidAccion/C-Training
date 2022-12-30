@@ -1,0 +1,249 @@
+1.Apples and Orranges
+
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'countApplesAndOranges' function below.
+     *
+     * The function accepts following parameters:
+     *  1. INTEGER s
+     *  2. INTEGER t
+     *  3. INTEGER a
+     *  4. INTEGER b
+     *  5. INTEGER_ARRAY apples
+     *  6. INTEGER_ARRAY oranges
+     */
+
+    public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+    {
+int apple=0;
+int orange=0;
+
+foreach( int ap in apples)
+{
+if(ap+a>=s && ap+a<=t)
+apple++;
+}
+Console.WriteLine(apple);
+foreach(int org in oranges)
+{
+if(org+b>=s && org+b<=t)
+orange++;
+}
+    
+
+Console.WriteLine(orange);
+    
+}
+}
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+
+        int s = Convert.ToInt32(firstMultipleInput[0]);
+
+        int t = Convert.ToInt32(firstMultipleInput[1]);
+
+        string[] secondMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+
+        int a = Convert.ToInt32(secondMultipleInput[0]);
+
+        int b = Convert.ToInt32(secondMultipleInput[1]);
+
+        string[] thirdMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+
+        int m = Convert.ToInt32(thirdMultipleInput[0]);
+
+        int n = Convert.ToInt32(thirdMultipleInput[1]);
+
+        List<int> apples = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(applesTemp => Convert.ToInt32(applesTemp)).ToList();
+
+        List<int> oranges = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(orangesTemp => Convert.ToInt32(orangesTemp)).ToList();
+
+        Result.countApplesAndOranges(s, t, a, b, apples, oranges);
+    }
+}
+
+2.Birthday Cake Candles
+
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'birthdayCakeCandles' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY candles as parameter.
+     */
+
+    public static int birthdayCakeCandles(List<int> candles)
+    {
+int maxcandles=candles.Max();
+int num=0;
+for (int i=0;i<candles.Count;i++)
+{
+    if(maxcandles==candles[i])
+    num++;
+}
+return num;
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int candlesCount = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> candles = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(candlesTemp => Convert.ToInt32(candlesTemp)).ToList();
+
+        int result = Result.birthdayCakeCandles(candles);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
+
+3.Staircase
+
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'staircase' function below.
+     *
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static void staircase(int n)
+    {
+
+        for (int i = 1; i <= n; i++)
+        {
+            string spaces = new string(' ', n - i);
+            string hashes = new string('#', i);
+           Console.WriteLine(spaces + hashes);
+        }
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        Result.staircase(n);
+    }
+}
+
+4.plus minus (facing test case error)
+
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'plusMinus' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void plusMinus(List<int> arr)
+    {
+decimal positive=0;
+decimal negative=0;
+decimal zeros=0;
+
+
+
+foreach(var item in arr)
+{
+    if(item>0)
+    negative++;
+    else if (item<0)
+    positive++;
+    else
+    zeros++;
+}
+Console.WriteLine((positive / arr.Count).ToString("0.000000"));
+Console.WriteLine((negative/ arr.Count).ToString("0.000000"));
+Console.WriteLine((zeros / arr.Count).ToString("0.000000"));
+
+    }
+}
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+
+        Result.plusMinus(arr);
+    }
+}
