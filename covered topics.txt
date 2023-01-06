@@ -1,0 +1,10 @@
+Variables
+Data Types
+Strings
+Operators
+conditions&loops
+Array
+comments
+Switch(can use this like if else)
+
+gsheet Link-https://docs.google.com/spreadsheets/d/1WI-qZKyfU12fJTtJg2crOTHZ5j5obZejEyu5gNl6rCY/edit?usp=sharing
