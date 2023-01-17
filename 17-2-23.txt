@@ -1,0 +1,23 @@
+SQL _ AHCKERRANK
+
+1.select by ID
+SELECT * FROM CITY WHERE ID = 1661; 
+
+2.Japanese city attributes
+SELECT * FROM CITY WHERE COUNTRYCODE='JPN';
+
+3.japanese city names
+ELECT NAME FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+4.weather observation Station1
+SELECT CITY,STATE FROM STATION;
+
+5.weather observation station3
+SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2)=0 ORDER BY CITY ASC; 
+
+6.weather observation station4
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;  
+
+
+
+ 

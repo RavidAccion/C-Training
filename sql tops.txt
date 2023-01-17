@@ -1,0 +1,7 @@
+arithmetic opts logical opts...
+
+
+sp(learn)
+primary key....foreign key
+create table
+retrive 
