@@ -18,6 +18,15 @@ SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2)=0 ORDER BY CITY ASC;
 6.weather observation station4
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;  
 
+6.weather observation station5
+select city, length(city) from station order by length(city) DESC,city ASC fetch first row only;
+select city, length(city) from station order by length(city) asc ,city asc fetch first row only;          
 
+7.weather observation station6
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' 
+OR CITY LIKE 'U%' ORDER BY CITY ASC;       
+
+
+8.weather observation station7
 
  
