@@ -1,0 +1,24 @@
+-- create a table
+CREATE TABLE College (
+  id INTEGER ,
+  name TEXT NOT NULL,
+  gender TEXT NOT NULL
+);
+
+INSERT INTO College VALUES (01, 'Rio', 'M');
+INSERT INTO College VALUES (02, 'Ashna', 'f');
+INSERT INTO College VALUES (03, 'Ishan', 'M');
+INSERT INTO College VALUES (04, 'Rambo', 'M');
+INSERT INTO College VALUES (05, 'Niki', 'f');
+INSERT INTO College VALUES (06, 'HEALY', 'f');
+
+
+/*Alter TABLE college add year int*/
+
+SELECT * FROM college WHERE gender = 'F';
+
+UPDATE college SET gender = 'f' WHERE id = 03;
+
+DELETE FROM college WHERE id= 02;
+
+SELECT DISTINCT id FROM college ORDER BY id;
